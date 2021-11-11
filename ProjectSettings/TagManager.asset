@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Teleporter
+  - Item
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 2514018731
+    locked: 0
+  - name: Tutorial Text
+    uniqueID: 143520457
+    locked: 0
+  - name: Shadow
+    uniqueID: 368526299
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Sprites
+    uniqueID: 1457243247
+    locked: 0
+  - name: UI
+    uniqueID: 4140499217
+    locked: 0
