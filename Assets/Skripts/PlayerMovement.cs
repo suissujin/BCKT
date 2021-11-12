@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,17 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
-    private Inventory inventory;
-
-    [SerializeField] private UI_Inventory uiInventory;
 
     Vector2 movement;
-
-    private void Awake()
-{
-    inventory = new Inventory();
-    uiInventory.SetInventory(inventory);
-}
 
     // Update is called once per frame
     void Update()
@@ -44,17 +34,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        ItemInteract itemInteract = collider.GetComponent<ItemInteract>();
-        if (itemInteract != null)
-        {
-            //add trigger with button instead of touching
-            inventory.AddItem(itemInteract.GetItem());
-            itemInteract.DestroySelf();
-        }
-    }
-    
     //not dependend on frame update to process
     void FixedUpdate()
     {

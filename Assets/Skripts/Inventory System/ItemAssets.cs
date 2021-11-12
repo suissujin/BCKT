@@ -5,20 +5,17 @@ using UnityEngine;
 public class ItemAssets : MonoBehaviour
 {
     public static ItemAssets Instance 
-    {get; 
-    private set;
+    {
+        get;
+        private set;
     }
 
     private void Awake()
     {
         Instance = this;
-
     }
 
-    public Transform ItemPF;
-
+    public Transform ItemColliderPF;
     public Sprite ForkSprite;
-    public Sprite LadleSprite;
-    public Sprite PH1Sprite;
-    public Sprite PH2Sprite;
+    public Sprite Ladlesprite;
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_Inventory : MonoBehaviour 
+public class UI_Inventory : MonoBehaviour
 {
     private Inventory inventory;
     private Transform itemSlotContainer;
@@ -15,12 +15,32 @@ public class UI_Inventory : MonoBehaviour
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
     }
 
-    private void RefreshInventoryItems()
+    public void SetInventory(Inventory inventory)
     {
+        this.inventory = inventory;
+        inventory.OnItemListChanged += Inventory_OnItemListChanged;
+        RefreshInventory();
+    }
+
+    private void Inventory_OnItemListChanged(object sender, System.EventArgs e)
+    {
+        RefreshInventory();
+    }
+
+    private void RefreshInventory()
+    {
+        foreach (Transform child in itemSlotContainer)
+        {
+            if (child == itemSlotTemplate) continue;
+            Destroy(child.gameObject);
+        }
+        {
             
+        }
         int x = 0;
         int y = 0;
         float itemSlotCellSize = 100f;
+
         foreach (Item item in inventory.GetItemList())
         {
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
@@ -28,33 +48,12 @@ public class UI_Inventory : MonoBehaviour
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
             Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
             image.sprite = item.GetSprite();
-
             x++;
-            if (x > 10)
+            if (x > 4)
             {
                 x = 0;
                 y++;
             }
         }
-
-        // foreach (Transform child in itemSlotContainer)
-        // { 
-        //     if (child == itemSlotTemplate) continue;
-        //     Destroy(child.gameObject);
-
-        // }
-
-    }
-    
-    public void SetInventory(Inventory inventory)
-    {
-        this.inventory = inventory;
-        inventory.OnItemListChanged += Inventory_OnItemListChanged;
-        RefreshInventoryItems();
-    }
-
-    private void Inventory_OnItemListChanged(object sender, System.EventArgs e)
-    {
-        RefreshInventoryItems();
     }
 }
