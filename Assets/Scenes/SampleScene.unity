@@ -1706,7 +1706,7 @@ GameObject:
   - component: {fileID: 747172658}
   - component: {fileID: 747172659}
   m_Layer: 5
-  m_Name: Image
+  m_Name: image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84357,7 +84357,7 @@ GameObject:
   m_Layer: 0
   m_Name: ItemAssets
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -84375,7 +84375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemColliderPF: {fileID: 2630115823739635543, guid: 978eea05ad532d24799d02a6945350fa, type: 3}
   ForkSprite: {fileID: -5636343253877202797, guid: daaaf5b8612d98b4cadaad0d61a1c913, type: 3}
-  LadleSprite: {fileID: 4432685069692216949, guid: f32d76a40d2a87345839af9da3e9d3f6, type: 3}
+  LadleSprite: {fileID: -4641098184274028752, guid: f32d76a40d2a87345839af9da3e9d3f6, type: 3}
 --- !u!4 &1740664192
 Transform:
   m_ObjectHideFlags: 0
@@ -84384,7 +84384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740664190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4465425, y: -0.8124546, z: 0}
+  m_LocalPosition: {x: 0, y: -1.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
