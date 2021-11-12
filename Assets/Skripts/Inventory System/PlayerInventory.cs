@@ -1,19 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
     private Inventory inventory;
     [SerializeField] private UI_Inventory uiInventory;
 
-    private void Awake()
+    private void Start()
     {
-        inventory =  new Inventory();
+        inventory = new Inventory();
         uiInventory.SetInventory(inventory);
-        ItemCollider.SpawnItemCollider(new Vector2(0, -2), new Item {itemType = Item.ItemType.Fork, amount =1, });
+        ItemCollider.SpawnItemCollider(new Vector2(0, -2), new Item { itemType = Item.ItemType.Ladle, amount = 1, });
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

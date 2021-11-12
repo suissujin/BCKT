@@ -3,11 +3,11 @@ guid: f32d76a40d2a87345839af9da3e9d3f6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4432685069692216949
-    second: laddle_0
+      213: -4641098184274028752
+    second: Ladle_0
   - first:
-      213: 7225692171484155001
-    second: laddle_1
+      213: -4170808546140152673
+    second: Ladle_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,28 +97,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: laddle_0
+      name: Ladle_0
       rect:
         serializedVersion: 2
         x: 19
-        y: 3
+        y: 5
         width: 33
-        height: 59
+        height: 57
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 576ae24e59f048d30800000000000000
-      internalID: 4432685069692216949
+      spriteID: 037d2ae7ac1879fb0800000000000000
+      internalID: -4641098184274028752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laddle_1
+      name: Ladle_1
       rect:
         serializedVersion: 2
         x: 74
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97c42a12fb0d64460800000000000000
-      internalID: 7225692171484155001
+      spriteID: f9c1725a9bf4e16c0800000000000000
+      internalID: -4170808546140152673
       vertices: []
       indices: 
       edges: []

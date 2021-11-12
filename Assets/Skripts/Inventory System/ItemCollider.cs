@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemCollider : MonoBehaviour
@@ -8,7 +5,6 @@ public class ItemCollider : MonoBehaviour
     private Item item;
     private SpriteRenderer spriteRenderer;
 
-    
     public static ItemCollider SpawnItemCollider(Vector2 position, Item item)
     {
         // Debug.Log(position);
@@ -36,10 +32,10 @@ public class ItemCollider : MonoBehaviour
         this.item = item;
     }
 
-    public Item GetItem()
-    {
-        return item;
-    }
+    public Item GetItem() => item;
+    // {
+    //     //return item;
+    // }
 
     public void DestroySelf()
     {

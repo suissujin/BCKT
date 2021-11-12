@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class Inventory 
+public class Inventory
 {
     private List<Item> itemList;
     public event EventHandler OnItemListChanged;
@@ -12,7 +10,7 @@ public class Inventory
     {
         itemList = new List<Item>();
 
-        AddItem(new Item { itemType = Item.ItemType.Ladle, amount =1});
+        AddItem(new Item { itemType = Item.ItemType.Fork, amount = 1 });
     }
 
     public void AddItem(Item item)
@@ -21,9 +19,6 @@ public class Inventory
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public List<Item> GetItemList()
-    {
-        return itemList;
-    }
+    public List<Item> GetItemList() => itemList;
 }
 
