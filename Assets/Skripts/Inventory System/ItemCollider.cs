@@ -33,9 +33,6 @@ public class ItemCollider : MonoBehaviour
     }
 
     public Item GetItem() => item;
-    // {
-    //     //return item;
-    // }
 
     public void DestroySelf()
     {

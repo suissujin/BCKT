@@ -1,36 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class shadowBucket : MonoBehaviour
+public class ShadowBucket : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public Animator animator;
-    //public Transform target;
-
-    Vector2 movement;
-
-    // Update is called once per frame
+    [SerializeField] private Animator sanimator;
+    private PlayerInventory playerInventory;
+    private PlayerMovement playerMovement;
+    void Start()
+    {
+        playerInventory = new PlayerInventory();
+        playerMovement = new PlayerMovement();
+    }
     void Update()
     {
-        //transform.position = new Vector2(target.transform.position.x, target.transform.position.y);
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical"); 
+        sanimator.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
+        sanimator.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-        
-        if(movement.x !=0)
+        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
-            movement.y = 0;
+            sanimator.SetFloat("Speed", 3.75F);
+            sanimator.SetFloat("LastHorizontal", Input.GetAxisRaw("Horizontal"));
+            sanimator.SetFloat("LastVertical", Input.GetAxisRaw("Vertical"));
+        }
+        else
+        {
+            sanimator.SetFloat("Speed", 0);
         }
 
-        //if(Input.GetAxisRaw("Horizontal")==1 || Input.GetAxisRaw("Horizontal")==-1 || Input.GetAxisRaw("Vertical")==1 || Input.GetAxisRaw("Vertical")==-1)
-        if( movement.x != 0 || movement.y != 0 )
+        if (playerInventory.inRange = true && Input.GetKeyDown(KeyCode.F))
         {
-           animator.SetFloat("LastHorizontal", Input.GetAxisRaw("Horizontal"));
-           animator.SetFloat("LastVertical", Input.GetAxisRaw("Vertical"));
+            sanimator.SetTrigger("pickup");
         }
     }
 }
