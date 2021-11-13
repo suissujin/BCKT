@@ -2,13 +2,10 @@ using UnityEngine;
 
 public class ShadowBucket : MonoBehaviour
 {
-    public float moveSpeed = 5f;
     [SerializeField] private Animator sanimator;
-    private PlayerInventory playerInventory;
     private PlayerMovement playerMovement;
     void Start()
     {
-        playerInventory = new PlayerInventory();
         playerMovement = new PlayerMovement();
     }
     void Update()
@@ -26,10 +23,10 @@ public class ShadowBucket : MonoBehaviour
         {
             sanimator.SetFloat("Speed", 0);
         }
-
-        if (playerInventory.inRange = true && Input.GetKeyDown(KeyCode.F))
-        {
-            sanimator.SetTrigger("pickup");
-        }
+    }
+    public void ShadowAni()
+    {
+        sanimator.SetTrigger("pickup");
     }
 }
+

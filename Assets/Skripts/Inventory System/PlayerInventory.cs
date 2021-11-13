@@ -5,22 +5,26 @@ public class PlayerInventory : MonoBehaviour
     private Inventory inventory;
     public bool inRange;
     private ItemCollider itemInRange;
+    private ShadowBucket shadowBucket;
     [SerializeField] private UI_Inventory uiInventory;
     [SerializeField] public Animator animator;
 
     private void Start()
     {
+        inRange = false;
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
+        shadowBucket = GameObject.Find("Shadow").GetComponent<ShadowBucket>();
         ItemCollider.SpawnItemCollider(new Vector2(0, -10), new Item { itemType = Item.ItemType.Ladle, amount = 1, });
         ItemCollider.SpawnItemCollider(new Vector2(2, -10), new Item { itemType = Item.ItemType.Fork, amount = 1, });
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && inRange)
+        if (Input.GetKeyDown(KeyCode.F) && inRange == true)
         {
             animator.SetTrigger("pickup");
+            shadowBucket.ShadowAni();
             inventory.AddItem(itemInRange.GetItem());
             Destroy(GameObject.Find(itemInRange.GetItem().itemType.ToString()));
             itemInRange.DestroySelf();
