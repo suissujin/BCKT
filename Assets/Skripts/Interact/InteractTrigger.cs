@@ -20,13 +20,13 @@ public class InteractTrigger : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
             useable = true;
-        Debug.Log("Item Useable");
+        // Debug.Log("Item Useable");
     }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player"))
             useable = false;
-        Debug.Log("Item not Useable");
+        // Debug.Log("Item not Useable");
     }
 }
