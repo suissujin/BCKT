@@ -21,7 +21,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && inRange == true)
+        if ((Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Return)) && inRange == true)
         {
             animator.SetTrigger("pickup");
             shadowBucket.ShadowAni();
@@ -29,21 +29,25 @@ public class PlayerInventory : MonoBehaviour
             Destroy(GameObject.Find(itemInRange.GetItem().itemType.ToString()));
             itemInRange.DestroySelf();
         }
+
+        Debug.Log(inRange);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         ItemCollider itemCollider = collider.GetComponent<ItemCollider>();
-        if (itemCollider != null)
+        if (collider.gameObject.CompareTag("Item") && itemCollider != null)
         {
             inRange = true;
             itemInRange = itemCollider;
+            Debug.Log("ok");
         }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        inRange = false;
+        if (collider.gameObject.CompareTag("Item"))
+            inRange = false;
         itemInRange = null;
 
     }

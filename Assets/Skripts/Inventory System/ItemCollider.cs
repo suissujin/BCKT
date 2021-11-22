@@ -13,6 +13,8 @@ public class ItemCollider : MonoBehaviour
 
         ItemCollider itemCollider = transform.GetComponent<ItemCollider>();
         itemCollider.SetItem(item);
+        itemCollider.tag = "Item";
+
 
         // Debug.Log(position);
         // Debug.Log(item);
