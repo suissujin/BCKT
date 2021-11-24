@@ -4,13 +4,18 @@ public class PlayerInventory : MonoBehaviour
 {
     private Inventory inventory;
     public bool inRange;
+    public bool ForkState;
+    public bool LadleState;
     private ItemCollider itemInRange;
     private ShadowBucket shadowBucket;
     [SerializeField] private UI_Inventory uiInventory;
     [SerializeField] public Animator animator;
 
+    #region Start 
     private void Start()
     {
+        ForkState = false;
+        LadleState = false;
         inRange = false;
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
@@ -18,7 +23,8 @@ public class PlayerInventory : MonoBehaviour
         ItemCollider.SpawnItemCollider(new Vector2(0, -10), new Item { itemType = Item.ItemType.Ladle, amount = 1, });
         ItemCollider.SpawnItemCollider(new Vector2(2, -10), new Item { itemType = Item.ItemType.Fork, amount = 1, });
     }
-
+    #endregion
+    #region Update
     private void Update()
     {
         if ((Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Return)) && inRange == true)
@@ -30,9 +36,45 @@ public class PlayerInventory : MonoBehaviour
             itemInRange.DestroySelf();
         }
 
-        Debug.Log(inRange);
-    }
+        if (Input.GetKeyDown(KeyCode.Alpha1) && inventory.GetItemList() != null)
+        {
+            SetStates(0);
+        }
 
+        if (Input.GetKeyDown(KeyCode.Alpha2) && inventory.GetItemList() != null)
+        {
+            SetStates(1);
+        }
+    }
+    #endregion
+    #region ItemEquipStates
+    public void SetStates(int index)
+    {
+        switch (inventory.GetItemList()[index].itemType.ToString())
+        {
+            case "Fork":
+                ForkState = true;
+                LadleState = false;
+                Debug.Log("Fork equipped");
+                //exampleState = false;
+                break;
+            case "Ladle":
+                ForkState = false;
+                LadleState = true;
+                Debug.Log("Ladle equipped");
+                //exampleState = false;
+                break;
+            // case "Example":
+            //     ForkState = false;
+            //     LadleState = false;
+            //     exampleState = true;
+            //break;
+            default:
+                break;
+        }
+    }
+    #endregion
+    #region Trigger
     private void OnTriggerEnter2D(Collider2D collider)
     {
         ItemCollider itemCollider = collider.GetComponent<ItemCollider>();
@@ -51,4 +93,6 @@ public class PlayerInventory : MonoBehaviour
         itemInRange = null;
 
     }
+
+    #endregion
 }

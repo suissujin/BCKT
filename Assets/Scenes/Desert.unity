@@ -1616,6 +1616,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &616825997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616825995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5fecd5efa41ee4498e03a4e90c2c17d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useable: 0
 --- !u!1 &626765522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,36 +2039,6 @@ MonoBehaviour:
   - {fileID: 107206036563168063, guid: 3704c1fd7a94b8b4a86acb179130ddb1, type: 3}
   - {fileID: 1969436679737898577, guid: d07644aa3acc8a1429e7e1a971213d2c, type: 3}
   - {fileID: 3695431060285808458, guid: d4699e71763a0cd4faacc244d044c844, type: 3}
---- !u!1 &923068801
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 923068802}
-  m_Layer: 0
-  m_Name: StateMachine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &923068802
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923068801}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3377566, y: -4.3078847, z: -6.903374}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1029044893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2179,7 +2162,6 @@ GameObject:
   - component: {fileID: 1054959352}
   - component: {fileID: 1054959359}
   - component: {fileID: 1054959360}
-  - component: {fileID: 1054959361}
   m_Layer: 0
   m_Name: Bucket
   m_TagString: Player
@@ -2373,18 +2355,6 @@ MonoBehaviour:
   inRange: 0
   uiInventory: {fileID: 425319640}
   animator: {fileID: 1054959354}
---- !u!114 &1054959361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054959351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe79d984c5a0daa469ddf02d11afeef3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1058534222
 GameObject:
   m_ObjectHideFlags: 0
@@ -85934,5 +85904,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1136817944747339982, guid: bde83659c5de2d943b879e04f5f8b175, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bde83659c5de2d943b879e04f5f8b175, type: 3}

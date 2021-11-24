@@ -36,6 +36,7 @@ public class UI_Inventory : MonoBehaviour
         int x = 0;
         int y = 0;
         float itemSlotCellSize = 100f;
+        int l = 1;
 
         foreach (Item item in inventory.GetItemList())
         {
@@ -44,10 +45,11 @@ public class UI_Inventory : MonoBehaviour
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
             Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
             image.sprite = item.GetSprite();
+            itemSlotRectTransform.gameObject.name = l++.ToString();
             // Debug.Log(image);
             // Debug.Log(item);
             x++;
-            if (x > 4)
+            if (x > 6)
             {
                 x = 0;
                 y++;

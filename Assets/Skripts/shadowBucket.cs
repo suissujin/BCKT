@@ -4,10 +4,6 @@ public class ShadowBucket : MonoBehaviour
 {
     [SerializeField] private Animator sanimator;
     private PlayerMovement playerMovement;
-    void Start()
-    {
-        playerMovement = new PlayerMovement();
-    }
     void Update()
     {
         sanimator.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));

@@ -5,6 +5,10 @@ using UnityEngine;
 public class InteractTrigger : MonoBehaviour
 {
     public bool useable;
+    public bool ForkInteractable;
+    public bool LadleInteractable;
+    protected PlayerInventory playerInventory;
+    protected ItemUses itemUses;
 
     public void start()
     {
@@ -14,13 +18,15 @@ public class InteractTrigger : MonoBehaviour
     public void Update()
     {
         if ((Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Return)) && useable == true)
-            Debug.Log("Item Used yay");
+            itemUses.UseTypeCheck();
+        Debug.Log("Item Used yay");
     }
+    #region Trigger
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player"))
             useable = true;
-        // Debug.Log("Item Useable");
+        Debug.Log("Item Useable");
     }
 
     private void OnTriggerExit2D(Collider2D collider)
@@ -29,4 +35,5 @@ public class InteractTrigger : MonoBehaviour
             useable = false;
         // Debug.Log("Item not Useable");
     }
+    #endregion
 }
