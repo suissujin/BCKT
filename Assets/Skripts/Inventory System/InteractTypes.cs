@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class InteractTypes : MonoBehaviour
 {
-    protected ForkMessage forkMessage;
-    protected LadleMessage ladleMessage;
-    protected NothignMessage nothignMessage;
+    public PlayerInventory playerInventory;
+    public ForkMessage forkMessage;
+    public LadleMessage ladleMessage;
+    public NothignMessage nothignMessage;
     protected Inventory inventory;
-    protected PlayerInventory playerInventory;
-    // public void Awake()
-    // {
-    //     UseTypeCheck();
-    // }
+    #region InteractEvent
     public void InteractEvent(string item)
     {
         switch (gameObject.name)
@@ -85,17 +82,23 @@ public class InteractTypes : MonoBehaviour
                 break;
         }
     }
-
-    // public void UseTypeCheck()
-    // {
-    //     if (playerInventory.ForkState == true)
-    //     {
-    //         Debug.Log("Lets go");
-    //         InteractEvent("Fork");
-    //     }
-    //     if (playerInventory.LadleState == true)
-    //     {
-    //         InteractEvent("Ladle");
-    //     }
-    // }
+    #endregion
+    #region  TypeCheck
+    public void UseTypeCheck()
+    {
+        if (playerInventory.ForkState == true)
+        {
+            Debug.Log("Lets go");
+            InteractEvent("Fork");
+        }
+        else if (playerInventory.LadleState == true)
+        {
+            InteractEvent("Ladle");
+        }
+        else
+        {
+            InteractEvent("Nothing");
+        }
+    }
+    #endregion
 }

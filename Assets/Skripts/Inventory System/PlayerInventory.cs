@@ -45,6 +45,14 @@ public class PlayerInventory : MonoBehaviour
         {
             SetStates(1);
         }
+        if (ForkState == true)
+        {
+            animator.SetTrigger("Fork");
+        }
+        if (LadleState == true)
+        {
+            animator.SetTrigger("Ladle");
+        }
     }
     #endregion
     #region ItemEquipStates

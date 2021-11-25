@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("LastHorizontal", Input.GetAxisRaw("Horizontal"));
             animator.SetFloat("LastVertical", Input.GetAxisRaw("Vertical"));
+            animator.SetTrigger("Walking");
         }
     }
     void FixedUpdate()
