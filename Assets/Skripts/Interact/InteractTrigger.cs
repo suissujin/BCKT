@@ -5,10 +5,8 @@ using UnityEngine;
 public class InteractTrigger : MonoBehaviour
 {
     public bool useable;
-    public bool ForkInteractable;
-    public bool LadleInteractable;
     protected PlayerInventory playerInventory;
-    protected ItemUses itemUses;
+    protected InteractTypes interactTypes;
 
     public void start()
     {
@@ -18,8 +16,19 @@ public class InteractTrigger : MonoBehaviour
     public void Update()
     {
         if ((Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Return)) && useable == true)
-            itemUses.UseTypeCheck();
-        Debug.Log("Item Used yay");
+            if (playerInventory.ForkState == true)
+            {
+                Debug.Log("Lets go");
+                interactTypes.InteractEvent("Fork");
+            }
+            else if (playerInventory.LadleState == true)
+            {
+                interactTypes.InteractEvent("Ladle");
+            }
+            else
+            {
+                interactTypes.InteractEvent("Nothing");
+            }
     }
     #region Trigger
     public void OnTriggerEnter2D(Collider2D collider)

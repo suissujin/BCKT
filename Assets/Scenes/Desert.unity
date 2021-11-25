@@ -1605,8 +1605,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2434357202233828336, guid: 7e10008caed5e344d9d0dc7d91e0f39a, type: 3}
-  m_Color: {r: 0, g: 0.43290615, b: 1, a: 0.31764707}
+  m_Sprite: {fileID: 21300000, guid: 6decdd5d19bd8074d8d7d095cb23ba67, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1629,6 +1629,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useable: 0
+--- !u!114 &616826000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616825995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41fd9b4f778cbb04c88c41954aa5b386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &626765522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2353,6 +2365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRange: 0
+  ForkState: 0
+  LadleState: 0
   uiInventory: {fileID: 425319640}
   animator: {fileID: 1054959354}
 --- !u!1 &1058534222
@@ -85858,7 +85872,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1136817944747339976, guid: bde83659c5de2d943b879e04f5f8b175, type: 3}
       propertyPath: m_Name
-      value: Interactable
+      value: Hole
       objectReference: {fileID: 0}
     - target: {fileID: 1136817944747339983, guid: bde83659c5de2d943b879e04f5f8b175, type: 3}
       propertyPath: m_RootOrder
