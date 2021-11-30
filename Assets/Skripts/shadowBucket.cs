@@ -14,6 +14,7 @@ public class ShadowBucket : MonoBehaviour
             sanimator.SetFloat("Speed", 3.75F);
             sanimator.SetFloat("LastHorizontal", Input.GetAxisRaw("Horizontal"));
             sanimator.SetFloat("LastVertical", Input.GetAxisRaw("Vertical"));
+            sanimator.SetTrigger("Walking");
         }
         else
         {

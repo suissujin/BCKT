@@ -4,7 +4,7 @@ public class ItemCollider : MonoBehaviour
 {
     private Item item;
     private SpriteRenderer spriteRenderer;
-
+    #region SpawnItem
     public static ItemCollider SpawnItemCollider(Vector2 position, Item item)
     {
         // Debug.Log(position);
@@ -14,28 +14,18 @@ public class ItemCollider : MonoBehaviour
         ItemCollider itemCollider = transform.GetComponent<ItemCollider>();
         itemCollider.SetItem(item);
         itemCollider.tag = "Item";
-
-
-        // Debug.Log(position);
-        // Debug.Log(item);
-        // Debug.Log(itemCollider);
-        // Debug.Log(transform);
-
         return itemCollider;
     }
-
+    #endregion
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
     public void SetItem(Item item)
     {
         this.item = item;
     }
-
     public Item GetItem() => item;
-
     public void DestroySelf()
     {
         Destroy(gameObject);

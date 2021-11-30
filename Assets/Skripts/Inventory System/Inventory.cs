@@ -1,16 +1,15 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class Inventory
+public class Inventory : MonoBehaviour
 {
-    private List<Item> itemList;
+    public List<Item> itemList;
+    public UI_Inventory uI_Inventory;
     public event EventHandler OnItemListChanged;
-
     public Inventory()
     {
         itemList = new List<Item>();
-
-        // AddItem(new Item { itemType = Item.ItemType.Fork, amount = 1 });
     }
 
     public void AddItem(Item item)
@@ -20,4 +19,9 @@ public class Inventory
     }
 
     public List<Item> GetItemList() => itemList;
+    public void RemoveItem()
+    {
+        itemList.Remove(itemList.Find(item => item.itemType == Item.ItemType.Ladle));
+    }
 }
+

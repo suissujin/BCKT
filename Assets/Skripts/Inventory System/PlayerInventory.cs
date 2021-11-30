@@ -20,8 +20,6 @@ public class PlayerInventory : MonoBehaviour
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
         shadowBucket = GameObject.Find("Shadow").GetComponent<ShadowBucket>();
-        ItemCollider.SpawnItemCollider(new Vector2(0, -10), new Item { itemType = Item.ItemType.Ladle, amount = 1, });
-        ItemCollider.SpawnItemCollider(new Vector2(2, -10), new Item { itemType = Item.ItemType.Fork, amount = 1, });
     }
     #endregion
     #region Update
@@ -35,12 +33,10 @@ public class PlayerInventory : MonoBehaviour
             Destroy(GameObject.Find(itemInRange.GetItem().itemType.ToString()));
             itemInRange.DestroySelf();
         }
-
         if (Input.GetKeyDown(KeyCode.Alpha1) && inventory.GetItemList() != null)
         {
             SetStates(0);
         }
-
         if (Input.GetKeyDown(KeyCode.Alpha2) && inventory.GetItemList() != null)
         {
             SetStates(1);
@@ -64,13 +60,12 @@ public class PlayerInventory : MonoBehaviour
                 ForkState = true;
                 LadleState = false;
                 Debug.Log("Fork equipped");
-                //exampleState = false;
+
                 break;
             case "Ladle":
                 ForkState = false;
                 LadleState = true;
                 Debug.Log("Ladle equipped");
-                //exampleState = false;
                 break;
             // case "Example":
             //     ForkState = false;
@@ -78,6 +73,9 @@ public class PlayerInventory : MonoBehaviour
             //     exampleState = true;
             //break;
             default:
+                ForkState = false;
+                LadleState = false;
+                animator.SetTrigger("Nothing");
                 break;
         }
     }
@@ -90,7 +88,6 @@ public class PlayerInventory : MonoBehaviour
         {
             inRange = true;
             itemInRange = itemCollider;
-            Debug.Log("ok");
         }
     }
 
@@ -99,7 +96,6 @@ public class PlayerInventory : MonoBehaviour
         if (collider.gameObject.CompareTag("Item"))
             inRange = false;
         itemInRange = null;
-
     }
 
     #endregion

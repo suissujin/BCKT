@@ -4,10 +4,10 @@ using UnityEngine.UI;
 public class UI_Inventory : MonoBehaviour
 {
     private Inventory inventory;
-    private Transform itemSlotContainer;
-    private Transform itemSlotTemplate;
+    public Transform itemSlotContainer;
+    public Transform itemSlotTemplate;
 
-    private void Awake()
+    public void Awake()
     {
         itemSlotContainer = transform.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
@@ -25,7 +25,7 @@ public class UI_Inventory : MonoBehaviour
         RefreshInventory();
     }
 
-    private void RefreshInventory()
+    public void RefreshInventory()
     {
         foreach (Transform child in itemSlotContainer)
         {
@@ -36,7 +36,6 @@ public class UI_Inventory : MonoBehaviour
         int x = 0;
         int y = 0;
         float itemSlotCellSize = 100f;
-        int l = 1;
 
         foreach (Item item in inventory.GetItemList())
         {
@@ -45,7 +44,7 @@ public class UI_Inventory : MonoBehaviour
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
             Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
             image.sprite = item.GetSprite();
-            itemSlotRectTransform.gameObject.name = l++.ToString();
+            itemSlotRectTransform.gameObject.name = item.itemType.ToString();
             // Debug.Log(image);
             // Debug.Log(item);
             x++;
