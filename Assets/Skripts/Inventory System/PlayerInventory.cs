@@ -29,6 +29,7 @@ public class PlayerInventory : MonoBehaviour
         {
             animator.SetTrigger("pickup");
             shadowBucket.ShadowAni();
+            GetComponent<Sound>().Pickup();
             inventory.AddItem(itemInRange.GetItem());
             Destroy(GameObject.Find(itemInRange.GetItem().itemType.ToString()));
             itemInRange.DestroySelf();

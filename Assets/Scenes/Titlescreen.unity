@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 66749874}
   - component: {fileID: 66749873}
   - component: {fileID: 66749872}
+  - component: {fileID: 66749876}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -227,6 +228,102 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &66749876
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66749871}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &107420452
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +486,9 @@ GameObject:
   - component: {fileID: 325279065}
   - component: {fileID: 325279064}
   - component: {fileID: 325279063}
+  - component: {fileID: 325279068}
   - component: {fileID: 325279066}
+  - component: {fileID: 325279067}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -523,6 +622,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772df3b9b1e3c304eb1ec3b5fb820b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  credits: {fileID: 0}
+--- !u!114 &325279067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325279061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 325279068}
+          m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+          m_MethodName: ButtonHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &325279068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325279061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98872e4c6beb04e46a76c65ffb0af966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 66749876}
+  walkSand1: {fileID: 0}
+  walkSand2: {fileID: 0}
+  walkCave1: {fileID: 0}
+  walkCave2: {fileID: 0}
+  pickup: {fileID: 0}
+  button: {fileID: 8300000, guid: 215dbdeee10e0b14f96a14b242b1cfb7, type: 3}
+  start: {fileID: 8300000, guid: d6eaf2f43ec2daa498ba1347c5d7dbdf, type: 3}
 --- !u!1 &464568229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1328,8 @@ GameObject:
   - component: {fileID: 1521914681}
   - component: {fileID: 1521914680}
   - component: {fileID: 1521914683}
+  - component: {fileID: 1521914685}
+  - component: {fileID: 1521914684}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1312,6 +1463,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772df3b9b1e3c304eb1ec3b5fb820b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  credits: {fileID: 0}
+--- !u!114 &1521914684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521914678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1521914685}
+          m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+          m_MethodName: ButtonHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1521914685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521914678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98872e4c6beb04e46a76c65ffb0af966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 66749876}
+  walkSand1: {fileID: 0}
+  walkSand2: {fileID: 0}
+  walkCave1: {fileID: 0}
+  walkCave2: {fileID: 0}
+  pickup: {fileID: 0}
+  button: {fileID: 8300000, guid: 215dbdeee10e0b14f96a14b242b1cfb7, type: 3}
+  start: {fileID: 0}
 --- !u!1 &1544505695
 GameObject:
   m_ObjectHideFlags: 0

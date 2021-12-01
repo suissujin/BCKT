@@ -6,16 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
+    public Transform credits;
     public void StartGame()
     {
-        if (gameObject.name == "Start")
-        {
-            SceneManager.LoadScene("Desert");
-        }
+        SceneManager.LoadScene("Desert");
     }
     public void EndGame()
     {
         Application.Quit();
         Debug.Log("Game closed");
+    }
+    public void Credits()
+    {
+        credits.gameObject.SetActive(true);
+    }
+    public void Close()
+    {
+        credits.gameObject.SetActive(false);
     }
 }
