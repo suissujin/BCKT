@@ -12,7 +12,7 @@ public class NothignMessage
         {
             case 1: return "The sand looks like its sinking...";
             case 2: return "Ouch!";
-            case 3: return "The cheese calling me...";
+            case 3: return "The cheese is calling me...";
             default: return null;
         };
     }
