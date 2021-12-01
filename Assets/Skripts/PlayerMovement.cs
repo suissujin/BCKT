@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Animator endAnimator;
     Vector2 movement;
+    void Awake()
+    {
+        Cursor.visible = false;
+    }
     #region WalkMovement (Update)
     void Update()
     {
@@ -18,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 
         if (movement.x != 0)
         {

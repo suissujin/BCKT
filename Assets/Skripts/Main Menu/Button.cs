@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
+    void Awake()
+    {
+        Cursor.visible = true;
+    }
     public Transform credits;
     public void StartGame()
     {
