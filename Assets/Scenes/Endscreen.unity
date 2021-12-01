@@ -1320,6 +1320,7 @@ MonoBehaviour:
   walkCave2: {fileID: 0}
   pickup: {fileID: 0}
   button: {fileID: 8300000, guid: 215dbdeee10e0b14f96a14b242b1cfb7, type: 3}
+  start: {fileID: 0}
 --- !u!114 &660524268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1573,6 +1574,7 @@ MonoBehaviour:
   walkCave2: {fileID: 0}
   pickup: {fileID: 0}
   button: {fileID: 8300000, guid: 215dbdeee10e0b14f96a14b242b1cfb7, type: 3}
+  start: {fileID: 0}
 --- !u!114 &715451096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2197,6 +2199,7 @@ MonoBehaviour:
   walkCave2: {fileID: 0}
   pickup: {fileID: 0}
   button: {fileID: 8300000, guid: 215dbdeee10e0b14f96a14b242b1cfb7, type: 3}
+  start: {fileID: 0}
 --- !u!114 &1241755015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2510,7 +2513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jen Stehlik
+  m_text: 'Jen '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 028e579ae63b3b745af3f3b5dc67ea2a, type: 2}
   m_sharedMaterial: {fileID: 4229212699721938662, guid: 028e579ae63b3b745af3f3b5dc67ea2a, type: 2}

@@ -671,7 +671,7 @@ MonoBehaviour:
   walkCave2: {fileID: 0}
   pickup: {fileID: 0}
   button: {fileID: 8300000, guid: 215dbdeee10e0b14f96a14b242b1cfb7, type: 3}
-  start: {fileID: 8300000, guid: d6eaf2f43ec2daa498ba1347c5d7dbdf, type: 3}
+  start: {fileID: 0}
 --- !u!1 &464568229
 GameObject:
   m_ObjectHideFlags: 0
