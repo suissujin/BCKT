@@ -6,15 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
-    public void OnClick()
+    public void StartGame()
     {
         if (gameObject.name == "Start")
         {
             SceneManager.LoadScene("Desert");
         }
-        if (gameObject.name == "Exit")
-        {
-            Application.Quit();
-        }
+    }
+    public void EndGame()
+    {
+        Application.Quit();
+        Debug.Log("Game closed");
     }
 }

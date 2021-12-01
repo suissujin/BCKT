@@ -12,7 +12,6 @@ public class SceneTransition_Player : MonoBehaviour
     {
         if (sceneTransition.TransitionReady == true && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.F)))
         {
-            Debug.Log("Lets go");
             textBox.DisplayText();
             textBox.textMeshPro.text = "Jump into the hole? Y/N";
             SceneTransitionReady = true;
@@ -20,7 +19,6 @@ public class SceneTransition_Player : MonoBehaviour
 
         if (SceneTransitionReady == true && Input.GetKeyDown(KeyCode.Y))
         {
-            Debug.Log("ok1");
             sceneTransition.SwitchScene();
         }
         else if (SceneTransitionReady == true && Input.GetKeyDown(KeyCode.N))

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -13,5 +14,10 @@ public class LevelLoader : MonoBehaviour
     public void Start()
     {
         black.gameObject.SetActive(false);
+    }
+
+    public void LoadLastScene()
+    {
+        SceneManager.LoadScene("Endscreen");
     }
 }
